@@ -41,6 +41,7 @@ apt-get update -y
 apt-get install -y docker-ce docker-ce-cli containerd.io
 groupadd docker || true
 gpasswd -a vagrant docker
+gpasswd -a runner docker
 newgrp docker
 systemctl restart docker
 
