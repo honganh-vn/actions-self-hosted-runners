@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.disk :disk, size: "#{ENV['VB_DISK_SIZE']}", primary: true
   config.vm.box_check_update = true
   RUNNER_TOKENS = ENV['GHA_RUNNER_TOKENS'].split(',')
-  RUNNER_TOKENS.to_enum.with_index(1).each do |token, i|
+  RUNNER_TOKENS.to_enum.with_index(2).each do |token, i|
     config.vm.define "runner#{i}" do |node|
       config.vm.provider "virtualbox" do |vb|
         vb.name = "runner#{i}"
